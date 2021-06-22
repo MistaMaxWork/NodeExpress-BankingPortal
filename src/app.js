@@ -14,10 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/',(req,res) => res.render('index',{title:'Account Summary', accounts}));
 
 const accountRoutes = require('./routes/accounts');
-const serviceRoutes = require('./routes/services');
+const servicesRoutes = require('./routes/services');
 
 app.use('/account',accountRoutes);
-app.use('/services',serviceRoutes);
+app.use('/services',servicesRoutes);
 
 app.get('/profile', (req, res) =>  res.render('profile', { user: users[0] }));
 
